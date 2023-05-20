@@ -11,3 +11,4 @@ def get(token):
 def test_2(login, text1):
     assert text1 in get(login)
 
+
