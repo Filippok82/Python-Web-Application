@@ -1,5 +1,8 @@
 import yaml
-from module import Site
+from Seminar02.module import Site
+import time
+
+
 
 with open("./testdata.yaml") as f:
     testdata = yaml.safe_load(f)
@@ -7,24 +10,35 @@ with open("./testdata.yaml") as f:
 site = Site(testdata["address"])
 
 
-def test_step1():
-    x_selector1 = """//*[@id="login"]/div[1]/label/input"""
-    input1 = site.fine_element("xpath", x_selector1)
+def test_step1(x_selector1, x_selector2, x_selector3, btn_selector, result):
+    input1 = site.find_element("xpath", x_selector1)
     input1.send_keys("test")
-    x_selector2 = """//*[@id="login"]/div[2]/label/input"""
-    input2 = site.fine_element("xpath", x_selector2)
+
+    input2 = site.find_element("xpath", x_selector2)
     input2.send_keys("test")
-    btn_selector = "button"
-    btn = site.fine_element("css", btn_selector)
+
+    btn = site.find_element("css", btn_selector)
     btn.click()
-    x_selector3 = """//*[@id="app"]/main/div/div/div[2]/h2"""
-    err_label = site.fine_element("xpath", x_selector3)
-    assert err_label.text == "401"
 
-test_step1()
+    err_label = site.find_element("xpath", x_selector3)
+    assert err_label.text == result
 
-# css_selector = "span.mdc-text-field__ripple"
-# print(site.get_element_property("css", css_selector, "height"))
-#
-# xpath = "//*[@id='login']/div[3]/button/div"
-# print(site.get_element_property("xpath", xpath, "color"))
+
+def test_step2(x_selector1, x_selector2, btn_selector, hello_user):
+    input1 = site.find_element("xpath", x_selector1)
+    input1.clear()
+    input1.send_keys(testdata['login'])
+
+    input2 = site.find_element("xpath", x_selector2)
+    input2.clear()
+    input2.send_keys(testdata['passwd'])
+
+    btn = site.find_element("css", btn_selector)
+    btn.click()
+
+    time.sleep(3)
+    element = site.find_element("xpath", hello_user)
+    assert element.text == f"Hello, {testdata['login']}"
+
+    site.close()
+

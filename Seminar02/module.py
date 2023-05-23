@@ -1,18 +1,18 @@
-import yaml
 import time
+import yaml
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 
-with open("./testdata.yaml") as f:
+with open("C:/Python/PythonGB02/Seminar02/testdata.yaml") as f:
     testdata = yaml.safe_load(f)
     browser = testdata["browser"]
 
 
 class Site:
-    def __init__(self, address):
+    def __init__(self, address, ):
         if browser == "firefox":
             service = Service(executable_path=GeckoDriverManager().install())
             options = webdriver.FirefoxOptions()
@@ -21,12 +21,12 @@ class Site:
             service = Service(executable_path=ChromeDriverManager().install())
             options = webdriver.ChromeOptions()
             self.driver = webdriver.Chrome(service=service, options=options)
-        self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(testdata['wait'])
         self.driver.maximize_window()
         self.driver.get(address)
         time.sleep(testdata["sleep_time"])
 
-    def fine_element(self, mode, path):
+    def find_element(self, mode, path):
         if mode == "css":
             element = self.driver.find_element(By.CSS_SELECTOR, path)
         elif mode == "xpath":
@@ -36,7 +36,7 @@ class Site:
         return element
 
     def get_element_property(self, mode, path, property):
-        element = self.fine_element(mode, path)
+        element = self.find_element(mode, path)
         return element.value_of_css_property(property)
 
     def close(self):
