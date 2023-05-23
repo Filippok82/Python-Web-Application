@@ -1,5 +1,5 @@
 import yaml
-
+import pytest
 from module import Site
 
 with open("./testdata.yaml") as f:
