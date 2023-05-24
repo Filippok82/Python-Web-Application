@@ -1,0 +1,7 @@
+2023-05-24 17:28:53 INFO ====== WebDriver manager ======
+2023-05-24 17:28:54 INFO Driver [C:\Users\IrinaFil\.wdm\drivers\chromedriver\win32\113.0.5672.63\chromedriver.exe] found in cache
+2023-05-24 17:28:55 INFO Test1 Starting
+2023-05-24 17:28:57 INFO Send test to element//*[@id="login"]/div[1]/label/input
+2023-05-24 17:28:57 INFO Send test to element//*[@id="login"]/div[2]/label/input
+2023-05-24 17:28:57 INFO Click login button
+2023-05-24 17:28:59 INFO We find 401in error field ('xpath', '//*[@id="app"]/main/div/div/div[2]/h2')
