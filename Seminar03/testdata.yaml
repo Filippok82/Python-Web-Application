@@ -1,0 +1,12 @@
+address: https://test-stand.gb.ru
+browser: chrome
+sleep_time: 1
+wait: 3
+login: 'alalalalal'
+passwd: '3dfd64df7e'
+title: 'New post sem3'
+description: 'A brief description of the new post sem3'
+content: 'The text of the new post sem3'
+name: "Test sem3"
+email: "test_sem3@yandex.ru"
+message: "Message seminar3 homework3"

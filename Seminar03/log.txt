@@ -1,0 +1,19 @@
+2023-05-27 13:19:42 INFO ====== WebDriver manager ======
+2023-05-27 13:19:43 INFO Driver [C:\Users\IrinaFil\.wdm\drivers\chromedriver\win32\113.0.5672.63\chromedriver.exe] found in cache
+2023-05-27 13:19:45 INFO Enter login 
+2023-05-27 13:19:45 INFO Enter password 
+2023-05-27 13:19:45 INFO Click button 
+2023-05-27 13:19:46 INFO Error 401 
+2023-05-27 13:19:46 INFO Enter valid login 
+2023-05-27 13:19:46 INFO Enter password 
+2023-05-27 13:19:46 INFO Click button 
+2023-05-27 13:19:49 INFO Error Hello, alalalalal 
+2023-05-27 13:19:49 INFO Enter title new post
+2023-05-27 13:19:49 INFO Enter description new post
+2023-05-27 13:19:50 INFO Enter content new post
+2023-05-27 13:19:50 INFO Click button save new post
+2023-05-27 13:19:52 INFO Error New post sem3 
+2023-05-27 13:19:52 INFO Enter name 
+2023-05-27 13:19:53 INFO Enter email
+2023-05-27 13:19:53 INFO Enter message
+2023-05-27 13:19:55 INFO Error Form successfully submitted 
