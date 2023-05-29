@@ -1,131 +1,126 @@
 import yaml
-
 from BaseApp import BasePage
 from selenium.webdriver.common.by import By
 import logging
 
-with open("./testdata.yaml") as f:
-    testdata = yaml.safe_load(f)
+
 
 
 class TestLocators:
-    x_selector1 = (By.XPATH, """//*[@id="login"]/div[1]/label/input""")
-    x_selector2 = (By.XPATH, """//*[@id="login"]/div[2]/label/input""")
-    x_selector3 = (By.XPATH, """//*[@id="app"]/main/div/div/div[2]/h2""")
-    btn_selector = (By.CSS_SELECTOR, """button""")
-    x_selector4 = (By.XPATH, """//*[@id="app"]/main/nav/ul/li[3]/a""")
-    btn_new_post = (By.XPATH, """//*[@id="create-btn"]""")
-    title = (By.XPATH, """//*[@id="create-item"]/div/div/div[1]/div/label/input""")
-    description = (By.XPATH, """//*[@id="create-item"]/div/div/div[2]/div/label/span/textarea""")
-    content = (By.XPATH, """//*[@id="create-item"]/div/div/div[3]/div/label/span/textarea""")
-    btn_save = (By.XPATH, """//*[@id="create-item"]/div/div/div[7]/div/button/span""")
-    check_title = (By.XPATH, """//*[@id="app"]/main/div/div[1]/h1""")
-    btn_contact_us = (By.XPATH, """//*[@id="app"]/main/nav/ul/li[2]/a""")
-    field_name = (By.XPATH, """//*[@id="contact"]/div[1]/label""")
-    field_email = (By.XPATH, """//*[@id="contact"]/div[2]/label""")
-    field_message = (By.XPATH, """//*[@id="contact"]/div[3]/label""")
-    btn_save_contact_us = (By.XPATH, """//*[@id="contact"]/div[4]/button""")
-
+    ids = dict()
+    with open("./locators.yaml") as f:
+        locators = yaml.safe_load(f)
+    for locator in locators["xpath"].keys():
+        ids[locator] = (By.XPATH, locators["xpath"][locator])
+    for locator in locators["css"].keys():
+        ids[locator] = (By.CSS_SELECTOR, locators["css"][locator])
 
 class Operations(BasePage, TestLocators):
 
-    def enter_login(self):
-        logging.info('Enter login ')
-        input1 = self.find_element(self.x_selector1)
-        input1.send_keys("test")
+    # ENTER TEXT
+    def enter_text_into_field(self, locator, word, description=None):
+        if description:
+            element_name = description
+        else:
+            element_name = locator
+        logging.debug(f"Send {word} to element {element_name}")
+        field = self.find_element(locator)
+        if not field:
+            logging.error(f"Element {locator} nit found")
+            return False
+        try:
+            field.clear()
+            field.send_keys(word)
+        except:
+            logging.exception(f"Exception while operation with {locator}")
+            return False
+        return True
 
-    def enter_pass(self):
-        logging.info('Enter password ')
-        input2 = self.find_element(self.x_selector2)
-        input2.send_keys("test")
+    def enter_login(self, word):
+        self.enter_text_into_field(TestLocators.ids["x_selector1"], word, description="Login form")
+
+    def enter_pass(self, word):
+        self.enter_text_into_field(TestLocators.ids["x_selector2"], word, description="Password form")
+
+    def enter_title(self, word):
+        self.enter_text_into_field(TestLocators.ids["title"], word, description="title")
+
+    def enter_description(self, word):
+        self.enter_text_into_field(TestLocators.ids["description"], word, description="description")
+
+    def enter_content(self, word):
+        self.enter_text_into_field(TestLocators.ids["content"], word, description="content")
+
+    def enter_name(self, word):
+        self.enter_text_into_field(TestLocators.ids["field_name"], word, description="name")
+
+    def enter_email(self, word):
+        self.enter_text_into_field(TestLocators.ids["field_email"], word, description="email")
+
+    def enter_message(self, word):
+        self.enter_text_into_field(TestLocators.ids["field_message"], word, description="message")
+
+    # CLICK
+    def click_button(self, locator, description=None):
+        if description:
+            element_name = description
+        else:
+            element_name = locator
+
+        button = self.find_element(locator)
+        if not button:
+            return False
+        try:
+            button.click()
+        except:
+            logging.exception("Exception with click")
+            return False
+        logging.debug(f"Clicked {element_name} button")
+        return True
 
     def click_login_button(self):
-        logging.info('Click button ')
-        btn = self.find_element(self.btn_selector)
-        btn.click()
-
-    def get_error_text(self):
-        err_label = self.find_element(self.x_selector3)
-        text = err_label.text
-        logging.info(f'Error {text} ')
-        return text
-
-    def enter_login02(self):
-        logging.info('Enter valid login ')
-        input1 = self.find_element(self.x_selector1)
-        input1.send_keys(testdata["login"])
-
-    def enter_pass02(self):
-        logging.info('Enter password ')
-        input2 = self.find_element(self.x_selector2)
-        input2.send_keys(testdata["passwd"])
-
-    def click_login_button02(self):
-        logging.info('Click button ')
-        btn = self.find_element(self.btn_selector)
-        btn.click()
-
-    def get_error_hello(self):
-        err_label = self.find_element(self.x_selector4)
-        text = err_label.text
-        logging.info(f'Error {text} ')
-        return text
+        self.click_button(TestLocators.ids["btn_selector"], description="login")
 
     def new_post(self):
-        btn = self.find_element(self.btn_new_post)
-        btn.click()
-
-    def enter_title(self):
-        logging.info('Enter title new post')
-        input1 = self.find_element(self.title)
-        input1.send_keys(testdata["title"])
-
-    def enter_description(self):
-        logging.info('Enter description new post')
-        input2 = self.find_element(self.description)
-        input2.send_keys(testdata["description"])
-
-    def enter_content(self):
-        logging.info('Enter content new post')
-        input3 = self.find_element(self.content)
-        input3.send_keys(testdata["content"])
+        self.click_button(TestLocators.ids["btn_new_post"], description="new post")
 
     def click_save_post(self):
-        logging.info('Click button save new post')
-        btn = self.find_element(self.btn_save)
-        btn.click()
-
-    def get_error_title(self):
-        err_label = self.find_element(self.check_title)
-        text = err_label.text
-        logging.info(f'Error {text} ')
-        return text
+        self.click_button(TestLocators.ids["btn_save"], description="save post")
 
     def click_contact_us(self):
-        btn = self.find_element(self.btn_contact_us)
-        btn.click()
-
-    def enter_name(self):
-        logging.info('Enter name ')
-        input1 = self.find_element(self.field_name)
-        input1.send_keys(testdata["name"])
-
-    def enter_email(self):
-        logging.info('Enter email')
-        input1 = self.find_element(self.field_email)
-        input1.send_keys(testdata["email"])
-
-    def enter_message(self):
-        logging.info('Enter message')
-        input1 = self.find_element(self.field_message)
-        input1.send_keys(testdata["message"])
+        self.click_button(TestLocators.ids["btn_contact_us"], description="contact us")
 
     def save_contact_us(self):
-        btn = self.find_element(self.btn_save_contact_us)
-        btn.click()
+        self.click_button(TestLocators.ids["btn_save_contact_us"], description="save contact us")
+
+    # GET TEXT
+    def get_text_element(self, locator, description=None):
+        if description:
+            element_name = description
+        else:
+            element_name = locator
+        field = self.find_element(locator, time=3)
+        if not field:
+            return None
+        try:
+            text = field.text
+        except:
+            logging.exception(f"Exception while get test from {element_name}")
+            return None
+        logging.debug(f"We find text {text} in field {element_name}")
+        return text
+
+    def get_error_text(self):
+        return self.get_text_element(TestLocators.ids["x_selector3"])
+
+    def get_error_hello(self):
+        return self.get_text_element(TestLocators.ids["x_selector4"])
+
+    def get_error_title(self):
+        return self.get_text_element(TestLocators.ids["check_title"])
 
     def check_alert(self):
         alert = self.driver.switch_to.alert
         text_alert = alert.text
-        logging.info(f'Error {text_alert} ')
+        logging.info(f' {text_alert} ')
         return text_alert

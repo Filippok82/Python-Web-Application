@@ -10,26 +10,6 @@ with open("./testdata.yaml") as f:
     testdata = yaml.safe_load(f)
 
 
-@pytest.fixture()
-def er1():
-    return "401"
-
-
-@pytest.fixture()
-def er2():
-    return "Hello, {}".format(testdata["login"])
-
-
-@pytest.fixture()
-def er3():
-    return testdata["title"]
-
-
-@pytest.fixture()
-def er4():
-    return "Form successfully submitted"
-
-
 @pytest.fixture(scope='session')
 def browser():
     if browser == "firefox":

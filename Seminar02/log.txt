@@ -1,0 +1,2 @@
+2023-05-27 19:13:51 INFO ====== WebDriver manager ======
+2023-05-27 19:13:52 INFO Driver [C:\Users\IrinaFil\.wdm\drivers\chromedriver\win32\113.0.5672.63\chromedriver.exe] found in cache
