@@ -1,8 +1,8 @@
 xpath:
-    x_selector1: //*[@id="login"]/div[1]/label/input
-    x_selector2: //*[@id="login"]/div[2]/label/input
-    x_selector3: //*[@id="app"]/main/div/div/div[2]/h2
-    x_selector4: //*[@id="app"]/main/nav/ul/li[3]/a
+    field_login: //*[@id="login"]/div[1]/label/input
+    field_passwd: //*[@id="login"]/div[2]/label/input
+    text_error: //*[@id="app"]/main/div/div/div[2]/h2
+    text_hello_user: //*[@id="app"]/main/nav/ul/li[3]/a
     btn_new_post: //*[@id="create-btn"]
     title: //*[@id="create-item"]/div/div/div[1]/div/label/input
     description: //*[@id="create-item"]/div/div/div[2]/div/label/span/textarea

@@ -1,4 +1,5 @@
 import pytest
+import requests
 import yaml
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -23,3 +24,29 @@ def browser():
         driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
+
+
+@pytest.fixture()
+def good():
+    return "колбаса"
+
+
+@pytest.fixture()
+def bad():
+    return "калбаса"
+
+
+@pytest.fixture()
+def login():
+    r = requests.post('https://test-stand.gb.ru/gateway/login', data={'username': testdata["login"],
+                                                                      'password': testdata["passwd"]})
+    return r.json()['token']
+
+
+@pytest.fixture()
+def text1():
+    return "Тест"
+
+@pytest.fixture()
+def checking_description():
+    return 'A brief description of the new post'

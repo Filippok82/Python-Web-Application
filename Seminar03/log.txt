@@ -1,7 +1,88 @@
-2023-05-27 21:00:25 INFO ====== WebDriver manager ======
-2023-05-27 21:00:26 INFO Driver [C:\Users\IrinaFil\.wdm\drivers\chromedriver\win32\113.0.5672.63\chromedriver.exe] found in cache
-2023-05-27 21:00:27 INFO Test1 Starting
-2023-05-27 21:00:34 INFO Test2 Starting
-2023-05-27 21:00:37 INFO Test3 Starting
-2023-05-27 21:00:41 INFO Test4 Starting
-2023-05-27 21:00:49 INFO  Form successfully submitted 
+2023-05-31 11:30:37 DEBUG Init schema document for None
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}string', <zeep.xsd.types.builtins.String object at 0x0000017A2CD3D930>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}boolean', <zeep.xsd.types.builtins.Boolean object at 0x0000017A2CD3D780>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}decimal', <zeep.xsd.types.builtins.Decimal object at 0x0000017A2CD3D6C0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}float', <zeep.xsd.types.builtins.Float object at 0x0000017A2CD3DAE0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}double', <zeep.xsd.types.builtins.Double object at 0x0000017A2CD3DB70>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}duration', <zeep.xsd.types.builtins.Duration object at 0x0000017A2CD3DA50>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}dateTime', <zeep.xsd.types.builtins.DateTime object at 0x0000017A2CD3DB10>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}time', <zeep.xsd.types.builtins.Time object at 0x0000017A2CD3DD50>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}date', <zeep.xsd.types.builtins.Date object at 0x0000017A2CD3DDE0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}gYearMonth', <zeep.xsd.types.builtins.gYearMonth object at 0x0000017A2CD3DC00>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}gYear', <zeep.xsd.types.builtins.gYear object at 0x0000017A2CD3DCC0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}gMonthDay', <zeep.xsd.types.builtins.gMonthDay object at 0x0000017A2CD3DF90>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}gDay', <zeep.xsd.types.builtins.gDay object at 0x0000017A2CD3E020>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}gMonth', <zeep.xsd.types.builtins.gMonth object at 0x0000017A2CD3DF00>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}hexBinary', <zeep.xsd.types.builtins.HexBinary object at 0x0000017A2CD3DE70>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}base64Binary', <zeep.xsd.types.builtins.Base64Binary object at 0x0000017A2CD3E1D0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}anyURI', <zeep.xsd.types.builtins.AnyURI object at 0x0000017A2CD3E260>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}QName', <zeep.xsd.types.builtins.QName object at 0x0000017A2CD3E0B0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}NOTATION', <zeep.xsd.types.builtins.Notation object at 0x0000017A2CD3E140>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}normalizedString', <zeep.xsd.types.builtins.NormalizedString object at 0x0000017A2CD3E410>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}token', <zeep.xsd.types.builtins.Token object at 0x0000017A2CD3E4A0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}language', <zeep.xsd.types.builtins.Language object at 0x0000017A2CD3E380>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}NMTOKEN', <zeep.xsd.types.builtins.NmToken object at 0x0000017A2CD3E2F0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}NMTOKENS', <zeep.xsd.types.builtins.NmTokens object at 0x0000017A2CD3E650>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}Name', <zeep.xsd.types.builtins.Name object at 0x0000017A2CD3E6E0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}NCName', <zeep.xsd.types.builtins.NCName object at 0x0000017A2CD3E530>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}ID', <zeep.xsd.types.builtins.ID object at 0x0000017A2CD3E5F0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}IDREF', <zeep.xsd.types.builtins.IDREF object at 0x0000017A2CD3E6B0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}IDREFS', <zeep.xsd.types.builtins.IDREFS object at 0x0000017A2CD3E830>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}ENTITY', <zeep.xsd.types.builtins.Entity object at 0x0000017A2CD3E8C0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}ENTITIES', <zeep.xsd.types.builtins.Entities object at 0x0000017A2CD3E950>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}integer', <zeep.xsd.types.builtins.Integer object at 0x0000017A2CD3E9E0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}nonPositiveInteger', <zeep.xsd.types.builtins.NonPositiveInteger object at 0x0000017A2CD3EA70>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}negativeInteger', <zeep.xsd.types.builtins.NegativeInteger object at 0x0000017A2CD3EB00>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}long', <zeep.xsd.types.builtins.Long object at 0x0000017A2CD3EB90>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}int', <zeep.xsd.types.builtins.Int object at 0x0000017A2CD3EC20>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}short', <zeep.xsd.types.builtins.Short object at 0x0000017A2CD3ECB0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}byte', <zeep.xsd.types.builtins.Byte object at 0x0000017A2CD3ED40>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}nonNegativeInteger', <zeep.xsd.types.builtins.NonNegativeInteger object at 0x0000017A2CD3EDD0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}unsignedByte', <zeep.xsd.types.builtins.UnsignedByte object at 0x0000017A2CD3EE60>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}unsignedInt', <zeep.xsd.types.builtins.UnsignedInt object at 0x0000017A2CD3EEF0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}unsignedLong', <zeep.xsd.types.builtins.UnsignedLong object at 0x0000017A2CD3EF80>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}unsignedShort', <zeep.xsd.types.builtins.UnsignedShort object at 0x0000017A2CD3F010>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}positiveInteger', <zeep.xsd.types.builtins.PositiveInteger object at 0x0000017A2CD3F0A0>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}anyType', <zeep.xsd.types.any.AnyType object at 0x0000017A2CD3F130>)
+2023-05-31 11:30:37 DEBUG register_type('{http://www.w3.org/2001/XMLSchema}anySimpleType', <zeep.xsd.types.simple.AnySimpleType object at 0x0000017A2CD3F190>)
+2023-05-31 11:30:37 DEBUG register_element('{http://www.w3.org/2001/XMLSchema}schema', <zeep.xsd.elements.builtins.Schema object at 0x0000017A2CD3F220>)
+2023-05-31 11:30:37 DEBUG Add document with tns http://www.w3.org/2001/XMLSchema to schema 1624249718896
+2023-05-31 11:30:37 DEBUG Loading remote data from: https://speller.yandex.net/services/spellservice?WSDL
+2023-05-31 11:30:37 DEBUG Starting new HTTPS connection (1): speller.yandex.net:443
+2023-05-31 11:30:37 DEBUG https://speller.yandex.net:443 "GET /services/spellservice?WSDL HTTP/1.1" 200 None
+2023-05-31 11:30:37 DEBUG Creating definition for https://speller.yandex.net/services/spellservice?WSDL
+2023-05-31 11:30:37 DEBUG Init schema document for 'https://speller.yandex.net/services/spellservice?WSDL'
+2023-05-31 11:30:37 DEBUG Add document with tns http://speller.yandex.net/services/spellservice to schema 1624249718896
+2023-05-31 11:30:37 DEBUG register_element('{http://speller.yandex.net/services/spellservice}CheckTextRequest', <Element(name='CheckTextRequest', type=<zeep.xsd.dynamic_types.CheckTextRequest object at 0x0000017A2CD3FB20>)>)
+2023-05-31 11:30:37 DEBUG register_element('{http://speller.yandex.net/services/spellservice}CheckTextResponse', <Element(name='CheckTextResponse', type=<zeep.xsd.dynamic_types.CheckTextResponse object at 0x0000017A2CD3FEB0>)>)
+2023-05-31 11:30:37 DEBUG register_type('{http://speller.yandex.net/services/spellservice}SpellResult', <zeep.xsd.dynamic_types.SpellResult object at 0x0000017A2CD3FF70>)
+2023-05-31 11:30:37 DEBUG register_type('{http://speller.yandex.net/services/spellservice}SpellError', <zeep.xsd.dynamic_types.SpellError object at 0x0000017A2CD80220>)
+2023-05-31 11:30:37 DEBUG register_element('{http://speller.yandex.net/services/spellservice}CheckTextsRequest', <Element(name='CheckTextsRequest', type=<zeep.xsd.dynamic_types.CheckTextsRequest object at 0x0000017A2CD80970>)>)
+2023-05-31 11:30:37 DEBUG register_element('{http://speller.yandex.net/services/spellservice}CheckTextsResponse', <Element(name='CheckTextsResponse', type=<zeep.xsd.dynamic_types.CheckTextsResponse object at 0x0000017A2CD80E20>)>)
+2023-05-31 11:30:37 DEBUG register_type('{http://speller.yandex.net/services/spellservice}ArrayOfSpellResult', <zeep.xsd.dynamic_types.ArrayOfSpellResult object at 0x0000017A2CD80EE0>)
+2023-05-31 11:30:37 DEBUG Resolving in schema <SchemaDocument(location='https://speller.yandex.net/services/spellservice?WSDL', tns='http://speller.yandex.net/services/spellservice', is_empty=False)>
+2023-05-31 11:30:37 DEBUG Adding message: {http://speller.yandex.net/services/spellservice}checkTextSoapIn
+2023-05-31 11:30:37 DEBUG Adding message: {http://speller.yandex.net/services/spellservice}checkTextSoapOut
+2023-05-31 11:30:37 DEBUG Adding message: {http://speller.yandex.net/services/spellservice}checkTextsSoapIn
+2023-05-31 11:30:37 DEBUG Adding message: {http://speller.yandex.net/services/spellservice}checkTextsSoapOut
+2023-05-31 11:30:37 DEBUG Adding port: {http://speller.yandex.net/services/spellservice}SpellServiceSoap
+2023-05-31 11:30:37 DEBUG Adding binding: {http://speller.yandex.net/services/spellservice}SpellServiceSoap
+2023-05-31 11:30:37 DEBUG Adding binding: {http://speller.yandex.net/services/spellservice}SpellServiceSoap12
+2023-05-31 11:30:37 DEBUG Adding service: SpellService
+2023-05-31 11:30:37 WARNING Forcing soap:address location to HTTPS
+2023-05-31 11:30:37 WARNING Forcing soap:address location to HTTPS
+2023-05-31 11:30:37 DEBUG Starting new HTTPS connection (1): test-stand.gb.ru:443
+2023-05-31 11:30:38 DEBUG https://test-stand.gb.ru:443 "POST /gateway/login HTTP/1.1" 200 236
+2023-05-31 11:30:38 INFO Test6 Starting
+2023-05-31 11:30:38 DEBUG Starting new HTTPS connection (1): test-stand.gb.ru:443
+2023-05-31 11:30:38 DEBUG https://test-stand.gb.ru:443 "GET /api/posts?owner=notMe HTTP/1.1" 200 1771
+2023-05-31 11:30:38 DEBUG We find text ['Тест', 'wdq', 'название поста', 'название поста'] in field {'data': [{'id': 44490, 'title': 'Тест', 'description': 'тестирование web', 'content': 'Помидоры, помидоры, помидоры овощи!', 'authorId': 15813, 'mainImage': {'id': 25394, 'cdnUrl': 'http://test-stand.gb.ru/files/public/image/adf81546c9c40c0cd55dbe42308aeea0.jpg'}, 'updatedAt': '2023-05-31T06:56:01+00:00', 'createdAt': '2023-05-31T06:56:01+00:00', 'labels': [], 'delayPublishTo': None, 'draft': False}, {'id': 44481, 'title': 'wdq', 'description': 'qd', 'content': 'qwd', 'authorId': 9498, 'mainImage': {'id': None, 'cdnUrl': ''}, 'updatedAt': '2023-05-31T05:00:35+00:00', 'createdAt': '2023-05-31T05:00:35+00:00', 'labels': [], 'delayPublishTo': None, 'draft': False}, {'id': 44480, 'title': 'название поста', 'description': 'описание', 'content': 'текст поста', 'authorId': 14055, 'mainImage': {'id': None, 'cdnUrl': ''}, 'updatedAt': '2023-05-30T23:00:15+00:00', 'createdAt': '2023-05-30T23:00:15+00:00', 'labels': [], 'delayPublishTo': '2023-01-31T00:00:00+00:00', 'draft': False}, {'id': 44479, 'title': 'название поста', 'description': 'описание', 'content': 'текст поста', 'authorId': 14055, 'mainImage': {'id': None, 'cdnUrl': ''}, 'updatedAt': '2023-05-30T22:59:54+00:00', 'createdAt': '2023-05-30T22:59:54+00:00', 'labels': [], 'delayPublishTo': None, 'draft': False}], 'meta': {'prevPage': 1, 'nextPage': 2, 'count': 26262}}
+2023-05-31 11:30:38 DEBUG Starting new HTTPS connection (1): test-stand.gb.ru:443
+2023-05-31 11:30:39 DEBUG https://test-stand.gb.ru:443 "POST /gateway/login HTTP/1.1" 200 236
+2023-05-31 11:30:39 INFO Test7 Starting
+2023-05-31 11:30:39 DEBUG Starting new HTTPS connection (1): test-stand.gb.ru:443
+2023-05-31 11:30:40 DEBUG https://test-stand.gb.ru:443 "POST /api/posts HTTP/1.1" 200 309
+2023-05-31 11:30:40 DEBUG We are creating a new post {'id': 44503, 'title': 'New post sem3', 'description': 'A brief description of the new post', 'content': 'The text of the new post sem3', 'authorId': 347, 'mainImage': {'id': None, 'cdnUrl': ''}, 'updatedAt': '2023-05-31T08:30:41+00:00', 'createdAt': '2023-05-31T08:30:41+00:00', 'labels': [], 'delayPublishTo': None, 'draft': False}
+2023-05-31 11:30:40 DEBUG Starting new HTTPS connection (1): test-stand.gb.ru:443
+2023-05-31 11:30:40 DEBUG https://test-stand.gb.ru:443 "GET /api/posts HTTP/1.1" 200 1297
+2023-05-31 11:30:40 DEBUG We getting description new post ['A brief description of the new post', 'A brief description of the new post', 'A brief description of the new post', 'A brief description of the new post']

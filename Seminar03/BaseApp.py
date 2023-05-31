@@ -1,13 +1,15 @@
 import logging
-
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from zeep import Client, Settings
+import yaml
 
 
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.base_url = "https://test-stand.gb.ru"
+        self.wsdl = ""
 
     def find_element(self, locator, time=10):
         try:
@@ -43,21 +45,18 @@ class BasePage:
             return None
 
 
-    # class BasePage:
-    # def __init__(self, driver):
-    #     self.address = 'https://test-stand.gb.ru'
-    #     self.driver = driver
-    #
-    # def start_browser(self):
-    #     self.driver.get(self.address)
-    #
-    # def find_element(self, locator, time=10):
-    #     return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
-    #                                                   message=f'Cant find element by locator{locator}')
-    #
-    # def get_element_property(self, locator, property):
-    #     element = self.find_element(locator)
-    #     return element.value_of_css_property(property)
+with open('testdata.yaml') as f:
+    wsdl = yaml.safe_load(f)['wsdl']
 
-    # def go_to_site(self):
-    #     return self.driver.get(self.address)
+settings = Settings(strict=False)
+client = Client(wsdl=wsdl, settings=settings)
+
+
+def checkText(word):
+    try:
+        response = client.service.checkText(word)[0]['s']
+    except:
+        logging.exception("Find element exception")
+        response = None
+    return response
+

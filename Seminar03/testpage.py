@@ -1,9 +1,8 @@
+import requests
 import yaml
 from BaseApp import BasePage
 from selenium.webdriver.common.by import By
 import logging
-
-
 
 
 class TestLocators:
@@ -14,6 +13,7 @@ class TestLocators:
         ids[locator] = (By.XPATH, locators["xpath"][locator])
     for locator in locators["css"].keys():
         ids[locator] = (By.CSS_SELECTOR, locators["css"][locator])
+
 
 class Operations(BasePage, TestLocators):
 
@@ -37,10 +37,10 @@ class Operations(BasePage, TestLocators):
         return True
 
     def enter_login(self, word):
-        self.enter_text_into_field(TestLocators.ids["x_selector1"], word, description="Login form")
+        self.enter_text_into_field(TestLocators.ids["field_login"], word, description="Login form")
 
     def enter_pass(self, word):
-        self.enter_text_into_field(TestLocators.ids["x_selector2"], word, description="Password form")
+        self.enter_text_into_field(TestLocators.ids["field_passwd"], word, description="Password form")
 
     def enter_title(self, word):
         self.enter_text_into_field(TestLocators.ids["title"], word, description="title")
@@ -111,10 +111,10 @@ class Operations(BasePage, TestLocators):
         return text
 
     def get_error_text(self):
-        return self.get_text_element(TestLocators.ids["x_selector3"])
+        return self.get_text_element(TestLocators.ids["text_error"])
 
     def get_error_hello(self):
-        return self.get_text_element(TestLocators.ids["x_selector4"])
+        return self.get_text_element(TestLocators.ids["text_hello_user"])
 
     def get_error_title(self):
         return self.get_text_element(TestLocators.ids["check_title"])
@@ -124,3 +124,40 @@ class Operations(BasePage, TestLocators):
         text_alert = alert.text
         logging.info(f' {text_alert} ')
         return text_alert
+
+
+class RestTest:
+    def get_someone_post(self, token):
+        try:
+            g = requests.get('https://test-stand.gb.ru/api/posts', headers={'X-Auth-Token': token},
+                             params={'owner': 'notMe'})
+            listcont = [i['title'] for i in g.json()['data']]
+        except:
+            logging.exception(f"Exception while get test from {token}")
+            return None
+        logging.debug(f"We find text {listcont} in field {g.json()}")
+        return listcont
+
+    def add_new_post(self, token):
+        with open("testdata.yaml") as f:
+            user = yaml.safe_load(f)
+        try:
+            response = requests.post("https://test-stand.gb.ru/api/posts", headers={'X-Auth-Token': token},
+                                     data={'title': user['title'],
+                                           'description': user['description'],
+                                           'content': user['content']})
+        except:
+            logging.exception(f"Exception while get test from {token}")
+            return None
+        logging.debug(f"We are creating a new post {response.json()}")
+        return response.json()
+
+    def get_my_post(self, token):
+        try:
+            response = requests.get('https://test-stand.gb.ru/api/posts', headers={'X-Auth-Token': token})
+            listdesc = [i['description'] for i in response.json()['data']]
+        except:
+            logging.exception(f"Exception while get test from {token}")
+            return None
+        logging.debug(f"We getting description new post {listdesc}")
+        return listdesc
