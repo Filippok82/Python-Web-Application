@@ -1,7 +1,7 @@
 from zeep import Client, Settings
 import yaml
 
-with open('../Seminar01/task01/addr.yaml') as f:
+with open('addr.yaml') as f:
     wsdl = yaml.safe_load(f)['wsdl']
 
 settings = Settings(strict=False)
